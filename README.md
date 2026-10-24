@@ -8,11 +8,15 @@
 
 **XBrowser** is a fast, ultra-lightweight, and privacy-focused desktop browser built with Python and QtWebEngine (Chromium). It unites the best capabilities of three pioneering browsers into a cohesive desktop experience:
 
-* 🧅 **Tor Browser**: SOCKS5 onion routing, `.onion` domain resolution, visual circuit inspector, anti-fingerprinting canvas/WebGL farbling, and security level controls.
-* 🛡️ **Brave Shields**: Native ad and tracker blocking, omnibox shields popover, per-site toggles, bandwidth/time savings metrics, and privacy DNS-over-HTTPS (DoH).
-* 🎭 **Opera Workspaces**: Docked left sidebar, isolated multi-session workspaces (Personal, Tor Privacy, Work & Tools), flyout web panels (AI Assistant, WhatsApp, Quick Notes, History), and Dual-Tab Split View.
-* 🧩 **Chrome & Opera Extension Engine**: Full support for Manifest V2 and V3 extensions, runtime polyfills (`chrome.*` and `browser.*`), automatic content script injection, and popup frames.
-* ⚡ **Resource Limiter & ProBalance**: Auto-trims memory working sets, snoozes inactive background tabs, and caps renderer memory usage for smooth multitasking on low-RAM machines.
+**Tor Browser**: SOCKS5 onion routing, `.onion` domain resolution, visual circuit inspector, anti-fingerprinting canvas/WebGL farbling, and security level controls.
+
+**Brave Shields**: Native ad and tracker blocking, omnibox shields popover, per-site toggles, bandwidth/time savings metrics, and privacy DNS-over-HTTPS (DoH).
+
+**Opera Workspaces**: Docked left sidebar, isolated multi-session workspaces (Personal, Tor Privacy, Work & Tools), flyout web panels (AI Assistant, WhatsApp, Quick Notes, History), and Dual-Tab Split View.
+
+**Chrome & Opera Extension Engine**: Full support for Manifest V2 and V3 extensions, runtime polyfills (`chrome.*` and `browser.*`), automatic content script injection, and popup frames.
+
+**Resource Limiter & ProBalance**: Auto-trims memory working sets, snoozes inactive background tabs, and caps renderer memory usage for smooth multitasking on low-RAM machines.
 
 ---
 
