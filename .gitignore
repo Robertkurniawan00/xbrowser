@@ -1,0 +1,67 @@
+# ==============================================================================
+# XBrowser .gitignore - Comprehensive GitHub Clean Template
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# PyInstaller / Standalone Executable Builds & Artifacts
+build/
+dist/
+*.spec.bak
+*.manifest
+XBrowser.exe
+*.exe
+installer/payload.zip
+
+# Tor Binary Runtime & Bundled Data (Exclude heavy/system binaries from git)
+bin/tor/data/
+bin/tor/docs/
+bin/tor/tor/
+bin/tor/*.exe
+bin/tor/*.dll
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.log
+
+# Virtual Environments
+.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+
+# Operating System & Temporary Files
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary Debug, Inspection & Screenshot files
+check_window.py
+crop_*.png
+temp_*.png
+test_output/
+*.screenshot.png
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local Runtime User Data & Cache
+.xbrowser/
