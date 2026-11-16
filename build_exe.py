@@ -85,15 +85,20 @@ def build():
         import win32com.client
         sh = win32com.client.Dispatch("WScript.Shell")
         
-        # Desktop
-        desktop = os.path.join(os.environ["USERPROFILE"], "Desktop")
-        dt_lnk = os.path.join(desktop, "XBrowser.lnk")
-        s = sh.CreateShortcut(dt_lnk)
-        s.TargetPath = os.path.join(local_app_dir, "XBrowser.exe")
-        s.WorkingDirectory = local_app_dir
-        s.IconLocation = f"{icon_path},0"
-        s.Description = "XBrowser - Privacy-Hardened Desktop Browser"
-        s.Save()
+        # Desktop shortcuts (Handle both regular Desktop and OneDrive Desktop redirection)
+        desktop_dirs = [
+            os.path.join(os.environ["USERPROFILE"], "Desktop"),
+            os.path.join(os.environ["USERPROFILE"], "OneDrive", "Desktop"),
+        ]
+        for d in desktop_dirs:
+            if os.path.exists(d):
+                dt_lnk = os.path.join(d, "XBrowser.lnk")
+                s = sh.CreateShortcut(dt_lnk)
+                s.TargetPath = os.path.join(local_app_dir, "XBrowser.exe")
+                s.WorkingDirectory = local_app_dir
+                s.IconLocation = f"{icon_path},0"
+                s.Description = "XBrowser - Privacy-Hardened Desktop Browser"
+                s.Save()
 
         # Start Menu
         programs_dir = os.path.join(os.environ["APPDATA"], "Microsoft", "Windows", "Start Menu", "Programs")
