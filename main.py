@@ -161,7 +161,7 @@ if getattr(sys, "frozen", False):
 
 # CRITICAL: Import QtWebEngineWidgets BEFORE creating QApplication instance
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-from PyQt6.QtWebEngineCore import QWebEngineUrlScheme
+from PyQt6.QtWebEngineCore import QWebEngineUrlScheme, QWebEngineSettings
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QIcon
 from PyQt6.QtCore import Qt
@@ -230,6 +230,17 @@ def main():
     window = MainWindow(start_url=args.url)
     if os.path.exists(icon_path):
         window.setWindowIcon(QIcon(icon_path))
+
+    # Harden profile web settings against insecure content, remote/local file abuse, and data leaks
+    for p in getattr(window, "profiles_map", {}).values():
+        if p and hasattr(p, "settings"):
+            ws = p.settings()
+            ws.setAttribute(QWebEngineSettings.WebAttribute.AllowRunningInsecureContent, False)
+            ws.setAttribute(QWebEngineSettings.WebAttribute.LocalContentCanAccessRemoteUrls, False)
+            ws.setAttribute(QWebEngineSettings.WebAttribute.LocalContentCanAccessFileUrls, False)
+            ws.setAttribute(QWebEngineSettings.WebAttribute.WebRTCPublicInterfacesOnly, True)
+            ws.setAttribute(QWebEngineSettings.WebAttribute.DnsPrefetchEnabled, False)
+            ws.setAttribute(QWebEngineSettings.WebAttribute.HyperlinkAuditingEnabled, False)
 
     if args.tor:
         window.tor_engine.enable_tor(True)

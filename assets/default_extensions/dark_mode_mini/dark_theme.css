@@ -1,5 +1,55 @@
-/* XBrowser Native Dark Mode Engine */
-/* Uses W3C standard color-scheme negotiation without destructive pixel inversion */
+/* XBrowser Real High-Performance Universal Dark Mode */
 :root {
     color-scheme: dark !important;
+}
+
+html, body {
+    background-color: #12161f !important;
+    color: #e2e8f0 !important;
+}
+
+/* Common containers and surfaces */
+div, section, article, main, aside, nav, header, footer,
+table, tr, td, th, ul, ol, li, dl, dt, dd {
+    border-color: #334155 !important;
+}
+
+/* Card and dialog surfaces */
+.card, .panel, .box, .modal, .dropdown, .menu, [class*="card"], [class*="container"], [class*="panel"] {
+    border-color: #334155 !important;
+}
+
+/* Links */
+a {
+    color: #38bdf8 !important;
+}
+a:visited {
+    color: #818cf8 !important;
+}
+a:hover {
+    color: #7dd3fc !important;
+}
+
+/* Form controls */
+input, textarea, select, button {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #475569 !important;
+    border-radius: 4px;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: #38bdf8 !important;
+    outline: none !important;
+}
+
+/* Strictly protect media - never invert or distort media elements */
+img, video, canvas, svg, picture, iframe, embed, object {
+    filter: none !important;
+}
+
+/* Code blocks */
+pre, code, kbd, samp {
+    background-color: #0b0f19 !important;
+    color: #38bdf8 !important;
+    border-color: #1e293b !important;
 }
