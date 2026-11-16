@@ -8,6 +8,11 @@ __pycache__/
 *$py.class
 *.pyd
 
+# Core package bytecode preservation
+!src/*.pyc
+!src/*.py
+!bin/tor/.gitkeep
+
 # PyInstaller / Standalone Executable Builds & Artifacts
 build/
 dist/

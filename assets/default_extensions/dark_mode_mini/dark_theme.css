@@ -1,0 +1,5 @@
+/* XBrowser Native Dark Mode Engine */
+/* Uses W3C standard color-scheme negotiation without destructive pixel inversion */
+:root {
+    color-scheme: dark !important;
+}

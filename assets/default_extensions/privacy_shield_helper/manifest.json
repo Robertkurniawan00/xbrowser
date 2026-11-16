@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Privacy Shield Helper",
+  "version": "2.0.1",
+  "description": "Membersihkan parameter pelacak URL (utm, fbclid, gclid) dan memblokir banner pelacak.",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Privacy Shield Helper"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "tracker_cleaner.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ]
+}
